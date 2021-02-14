@@ -5,9 +5,9 @@ class index extends Component {
     return (
       <div>
         <section className='hero is-link'>
-          <div className='hero-body'>
-            <p className='title has-text-centered'>Personnel Tracker</p>
-            <p className='subtitle has-text-centered'>Click on controls to filter by heading or use the search to narrow by results.</p>
+          <div className='hero-body has-text-centered'>
+            <p className='title is-size-1'>Personnel Tracker</p>
+            <p className='subtitle'>Click on controls to filter by heading or use the search to narrow by results.</p>
           </div>
         </section>
       </div>
