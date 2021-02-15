@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
+import TableRow from "../TableRow"
 
 class index extends Component {
   render () {
     return (
-      <div>
+      <section>
         <div className='container'>
-          <div className='columns is-centered is-vcentered is-mobile'>
+          <div className='columns is-centered is-centered  '>
             <div className='column is-narrow has-text-centered'>
-              <table className='table'>
+              <table className='table is-bordered is-narrow is-centered'>
                 <thead>
                   <tr>
                     <th>
@@ -26,6 +27,8 @@ class index extends Component {
                   </tr>
                 </thead>
                 <tbody>
+                <TableRow/>
+
                   <tr>
                     <th>
                       <img
@@ -46,7 +49,7 @@ class index extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     )
   }
 }
