@@ -4,14 +4,12 @@ class index extends Component {
   render () {
     return (
       <div>
-        <div className='container is-fluid'>
-          <div className='notification is-white'>
-            <div className='control'>
-              <input
-                className='input is-hovered'
-                type='text'
-                placeholder='Search'
-              />
+        <div className='container'>
+          <div className='columns is-two-fifths is-centered'>
+            <div className='column is-two-fifths'>
+              <div className='control has-icons-left has-icons-right'>
+                <input className='input' type='text' placeholder='Search' />
+              </div>
             </div>
           </div>
         </div>
