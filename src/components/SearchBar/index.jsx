@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class index extends Component {
   render () {
     return (
-      <div>
+      <section>
         <div className='container'>
           <div className='columns is-two-fifths is-centered'>
             <div className='column is-two-fifths'>
@@ -13,7 +13,7 @@ class index extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     )
   }
 }
