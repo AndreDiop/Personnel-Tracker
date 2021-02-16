@@ -6,17 +6,17 @@ const index = (props) => {
         <tr>
           <th>
             <img
-              src={props.image}
+              src={props.person.picture.large}
               width='75'
               height='75'
             ></img>
           </th>
           <td>
-            <p>{props.name}</p>
+            <p>{props.person.name.first} {props.person.name.last}</p>
           </td>
-          <td>{props.phone}</td>
-          <td>{props.email}</td>
-          <td>{props.dob}</td>
+          <td>{props.person.phone}</td>
+          <td>{props.person.email}</td>
+          <td>{props.person.dob.date}</td>
         </tr>
       </>
     );
