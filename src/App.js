@@ -5,26 +5,26 @@ import TableRow from "./components/TableRow";
 import axios from "axios";
 class App extends Component {
   state = {
-    users: [],
+    name: [],
   };
   componentDidMount() {
     this.getRandomUser();
-    console.log("Bro we made it");
+    console.log("Success");
   }
 
   getRandomUser() {
     axios
       .get("https://randomuser.me/api/?results=20")
       .then((response) => {
-        console.log(response.data.results);
-        this.setState({ users: response.data.results });
+        console.log(response.data.results[0].name.first);
+        this.setState({ name: response.data.results[0].name.first });
+        console.log(this.state.name);
       })
       .catch((error) => {
         // handle error
         console.log(error);
       });
   }
-
   render() {
     return (
       <div>
@@ -53,11 +53,8 @@ class App extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    <TableRow/>
-                      {/* {this.state.users.map((user) => (
-                        <TableRow {...user} key={user.id} />
-                        ))} */}
-                  
+                    {}
+                    <TableRow name={this.state.name} />
                   </tbody>
                 </table>
               </div>
