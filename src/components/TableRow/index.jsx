@@ -1,28 +1,25 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-
-class index extends Component {
-  render (props) {
+const index = (props) => {
     return (
-      <>
+        <>
         <tr>
           <th>
             <img
-              src="props.image"
+              src={props.image}
               width='75'
               height='75'
             ></img>
           </th>
           <td>
-            <p>props.name</p>
+            <p>{props.name}</p>
           </td>
-          <td>props.phone</td>
-          <td>props.email</td>
-          <td>props.dob</td>
+          <td>{props.phone}</td>
+          <td>{props.email}</td>
+          <td>{props.dob}</td>
         </tr>
       </>
-    )
-  }
-}
+    );
+};
 
-export default index
+export default index;
