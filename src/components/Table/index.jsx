@@ -1,24 +1,26 @@
 import React, { Component } from 'react'
 import TableRow from '../TableRow'
-import axios from "axios";
+import axios from 'axios'
 class index extends Component {
   state = {
     users: [],
-  };
-  componentDidMount() {
-    this.getRandomUser();
+    searchTerm: '',
+    alphabetical: 'az'
+  }
+  componentDidMount () {
+    this.getRandomUser()
   }
 
-  getRandomUser() {
+  getRandomUser () {
     axios
-      .get("https://randomuser.me/api/?results=200")
-      .then((response) => {
-        this.setState({ users: response.data.results });
+      .get('https://randomuser.me/api/?results=200')
+      .then(response => {
+        this.setState({ users: response.data.results })
       })
-      .catch((error) => {
+      .catch(error => {
         // handle error
-        console.log(error);
-      });
+        console.log(error)
+      })
   }
   render () {
     return (
@@ -32,7 +34,16 @@ class index extends Component {
                     <th>
                       <abbr title='Picture'>Picture</abbr>
                     </th>
-                    <th>Name</th>
+                    <th>
+                      Name
+                      <p>
+                        <button class='button'>
+                          <span class='icon is-small'>
+                            <i class='fas fa-sort'></i>
+                          </span>
+                        </button>
+                      </p>
+                    </th>
                     <th>
                       <abbr title='Phone'>Telephone</abbr>
                     </th>
