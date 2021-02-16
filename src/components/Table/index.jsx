@@ -1,7 +1,25 @@
 import React, { Component } from 'react'
-import TableRow from "../TableRow"
-
+import TableRow from '../TableRow'
+import axios from "axios";
 class index extends Component {
+  state = {
+    users: [],
+  };
+  componentDidMount() {
+    this.getRandomUser();
+  }
+
+  getRandomUser() {
+    axios
+      .get("https://randomuser.me/api/?results=200")
+      .then((response) => {
+        this.setState({ users: response.data.results });
+      })
+      .catch((error) => {
+        // handle error
+        console.log(error);
+      });
+  }
   render () {
     return (
       <section>
@@ -27,7 +45,9 @@ class index extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                <TableRow/>
+                  {this.state.users.map((user, index) => (
+                    <TableRow person={user} key={index} />
+                  ))}
                 </tbody>
               </table>
             </div>
