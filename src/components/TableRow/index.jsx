@@ -16,7 +16,7 @@ const index = (props) => {
           </td>
           <td>{props.person.phone}</td>
           <td>{props.person.email}</td>
-          <td>{props.person.dob.date}</td>
+          <td>{props.person.dob.date.substring(0, 9)}</td>
         </tr>
       </>
     );
