@@ -14,7 +14,7 @@ class App extends Component {
 
   getRandomUser() {
     axios
-      .get("https://randomuser.me/api/?results=20")
+      .get("https://randomuser.me/api/?results=200")
       .then((response) => {
         this.setState({ users: response.data.results });
       })
@@ -59,7 +59,7 @@ class App extends Component {
               </div>
             </div>
           </div>
-        </section>{" "}
+        </section>
       </div>
     );
   }
