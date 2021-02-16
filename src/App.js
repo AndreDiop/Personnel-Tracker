@@ -1,24 +1,22 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import TableRow from "./components/TableRow";
 import axios from "axios";
 class App extends Component {
   state = {
-    name: [],
+    users: [],
   };
   componentDidMount() {
     this.getRandomUser();
-    console.log("Success");
   }
 
   getRandomUser() {
     axios
       .get("https://randomuser.me/api/?results=20")
       .then((response) => {
-        console.log(response.data.results[0].name.first);
-        this.setState({ name: response.data.results[0].name.first });
-        console.log(this.state.name);
+        this.setState({ users: response.data.results });
       })
       .catch((error) => {
         // handle error
@@ -53,8 +51,9 @@ class App extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    {}
-                    <TableRow name={this.state.name} />
+                    {this.state.users.map((user, index) => (
+                      <TableRow person={user} key={index} />
+                    ))}
                   </tbody>
                 </table>
               </div>
