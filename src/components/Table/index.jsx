@@ -38,13 +38,13 @@ class index extends Component {
                     </th>
                     <th>
                       Name
-                      <p>
+                      <>
                         <button className='button'>
                           <span className='icon is-small'>
                             <i className='fas fa-sort'></i>
                           </span>
                         </button>
-                      </p>
+                      </>
                     </th>
                     <th>
                       <abbr title='Phone'>Telephone</abbr>
