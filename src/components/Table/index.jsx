@@ -16,6 +16,8 @@ class index extends Component {
       .get('https://randomuser.me/api/?results=200')
       .then(response => {
         this.setState({ users: response.data.results })
+        this.state.users.sort()
+        console.log(this.state.users)
       })
       .catch(error => {
         // handle error
@@ -37,9 +39,9 @@ class index extends Component {
                     <th>
                       Name
                       <p>
-                        <button class='button'>
-                          <span class='icon is-small'>
-                            <i class='fas fa-sort'></i>
+                        <button className='button'>
+                          <span className='icon is-small'>
+                            <i className='fas fa-sort'></i>
                           </span>
                         </button>
                       </p>
